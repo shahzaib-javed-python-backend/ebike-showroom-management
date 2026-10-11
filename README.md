@@ -1,21 +1,21 @@
 # ⚡ E-Bike Showroom Management System
 
-Ek modern, full-stack web application jo **FastAPI**, **SQLAlchemy**, **SQLite/PostgreSQL**, aur **Bootstrap 5** ko use karke banayi gayi hai. Is system ka maqsad e-bike showroom ke customers, unke phone numbers, bike models aur battery numbers ko efficiently manage karna hai.
+A modern, full-stack web application built using **FastAPI**, **SQLAlchemy**, **SQLite/PostgreSQL**, and **Bootstrap 5**. This system is designed to efficiently manage e-bike showroom customers, contact numbers, bike models, and battery numbers.
 
 ---
 
 ## 🎥 Project Demo
 
-[▶ Watch / Download Demo Video (MP4)](https://github.com/shahzaib-javed-python-backend/ebike-showroom-management/raw/main/demo.mp4.mp4)
+[![Project Demo](https://img.shields.io/badge/▶_Watch_Project_Demo-Video-red?style=for-the-badge&logo=youtube)](https://github.com/shahzaib-javed-python-backend/ebike-showroom-management/blob/main/demo.mp4.mp4)
 
 ---
 
 ## 🚀 Features
-* **Full CRUD Operations:** Customers ko add, view, update, aur delete karna bilkul asaan hai.
-* **Live Search Filter:** Showroom ke andar name, phone number, ya bike model ke zariye instant search ki ja sakti hai.
-* **FastAPI Backend:** Asynchronous endpoints aur Pydantic validation ke sath high performance backend.
-* **SQLAlchemy ORM:** Relational database management aur clean session handling.
-* **Responsive UI:** Bootstrap 5 dark mode dashboard jo mobile aur desktop dono par smooth chalta hai.
+* **Full Operations (CRUD):** Seamlessly add, view, update, and delete customer records.
+* **Live Search Filter:** Instantly filter records by customer name, phone number, or bike model.
+* **FastAPI Backend:** High-performance asynchronous endpoints powered by Pydantic data validation.
+* **SQLAlchemy ORM:** Robust relational database management and clean session handling.
+* **Responsive UI:** Modern Bootstrap 5 dark mode dashboard optimized for both desktop and mobile devices.
 
 ---
 
