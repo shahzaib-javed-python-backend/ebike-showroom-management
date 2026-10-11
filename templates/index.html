@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Bike Showroom & Fleet Management System - Advanced Portal</title>
+    <meta name="description" content="Ultimate All-in-One Electric Bike Showroom Management System featuring live inventory, customer tracking, automated PDF billing, and service logs.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0b0f19;
+            --bg-card: rgba(17, 24, 39, 0.75);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-gold: #f59e0b;
+            --accent-glow: rgba(245, 158, 11, 0.15);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-base);
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: rgba(11, 15, 25, 0.9) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .navbar-brand {
+            font-weight: 800;
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link { font-weight: 500; color: #9ca3af !important; transition: all 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: #f59e0b !important; }
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; padding-top: 6rem; }
+        .hero-title {
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 30%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #0b0f19;
+            font-weight: 700;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.75rem;
+        }
+        .btn-gold:hover { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #0b0f19; }
+        .btn-outline-custom {
+            border: 1px solid var(--border-color);
+            color: #f3f4f6;
+            background: rgba(255, 255, 255, 0.02);
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.75rem;
+        }
+        .btn-outline-custom:hover { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
+        .form-control {
+            background: rgba(3, 7, 18, 0.6) !important;
+            border: 1px solid var(--border-color) !important;
+            color: #f3f4f6 !important;
+            border-radius: 0.6rem;
+            padding: 0.65rem 1rem;
+        }
+        .form-control:focus { border-color: #f59e0b !important; box-shadow: 0 0 0 3px var(--accent-glow) !important; }
+        .table-custom { --bs-table-bg: transparent; --bs-table-color: #f3f4f6; border-color: var(--border-color); }
+        .table-custom th { color: #9ca3af; background: rgba(3, 7, 18, 0.4); padding: 1rem; border-bottom: 1px solid var(--border-color); }
+        .table-custom td { padding: 1rem; vertical-align: middle; border-bottom: 1px solid var(--border-color); }
+        section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fs-4 d-flex align-items-center gap-2" href="#home"><span>⚡</span> E-Bike Portal</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-lg-3 align-items-center mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-semibold" href="#dashboard">Live Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <header id="home" class="hero-section text-center text-lg-start">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-4" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2);">
+                        <span style="font-size: 0.8rem;">🛵</span>
+                        <span class="text-warning small fw-semibold">Next-Gen EV Showroom Suite</span>
+                    </div>
+                    <h1 class="hero-title display-4 fw-bold mb-4">Complete E-Bike Showroom & Fleet Management</h1>
+                    <p class="text-secondary lead mb-5 fs-6" style="max-width: 600px;">
+                        Manage customer records, track battery serial numbers, execute database CRUD operations, and generate instant printable PDF invoices from one unified hub.
+                    </p>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
+                        <a href="#dashboard" class="btn btn-gold">Open Live Dashboard</a>
+                        <a href="#services" class="btn btn-outline-custom">Explore Services</a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="glass-card p-4 text-center position-relative overflow-hidden">
+                        <div class="display-1 mb-3">⚡🛵</div>
+                        <h3 class="h5 text-warning fw-bold mb-2">Advanced Architecture</h3>
+                        <p class="text-secondary small mb-0">FastAPI backend integrated with SQLite database and modern Bootstrap 5 UI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-lg-6">
+                    <h2 class="text-warning fw-bold mb-4 display-6">About Our Showroom Platform</h2>
+                    <p class="text-secondary mb-3">
+                        We specialize in providing high-performance digital infrastructure for modern electric bike dealerships. Our system bridges customer relationship management (CRM) with vehicle fleet tracking.
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Built with speed, reliability, and security at its core, ensuring seamless business operations without friction.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="glass-card p-4 p-lg-5">
+                        <h3 class="h5 text-warning fw-bold mb-4">Platform Highlights</h3>
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-secondary">
+                            <li class="d-flex align-items-center gap-2">✅ Specialized electric bike & battery tracking</li>
+                            <li class="d-flex align-items-center gap-2">✅ Instant customer record & service logging</li>
+                            <li class="d-flex align-items-center gap-2">✅ One-click printable PDF showroom invoices</li>
+                            <li class="d-flex align-items-center gap-2">✅ Fast & lightweight SQLite database integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-warning fw-bold display-6">Our Core Services</h2>
+                <p class="text-secondary">Comprehensive digital solutions designed for modern electric mobility businesses.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="glass-card p-4 h-100 text-center">
+                        <div class="fs-1 mb-3">🔋</div>
+                        <h3 class="h5 fw-bold text-light mb-3">Battery Tracking</h3>
+                        <p class="text-secondary small mb-0">Keep track of unique battery serial numbers and purchase dates to manage warranties effortlessly.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="glass-card p-4 h-100 text-center">
+                        <div class="fs-1 mb-3">🧾</div>
+                        <h3 class="h5 fw-bold text-light mb-3">Instant Billing</h3>
+                        <p class="text-secondary small mb-0">Generate, view, and print professional e-bike sales receipts and service bills instantly.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="glass-card p-4 h-100 text-center">
+                        <div class="fs-1 mb-3">⚙️</div>
+                        <h3 class="h5 fw-bold text-light mb-3">Fleet Maintenance</h3>
+                        <p class="text-secondary small mb-0">Maintain detailed service records of periodic checkups and electrical repairs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Live Dashboard Section (CRUD + Stats) -->
+    <section id="dashboard">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-warning fw-bold display-6">⚡ Live Management Dashboard</h2>
+                <p class="text-secondary">Manage records, track e-bikes, and execute CRUD operations in real time.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="row g-4 mb-4">
+                <div class="col-12 col-md-6">
+                    <div class="glass-card p-4 h-100 d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-uppercase text-secondary small fw-bold">Total Customers</span>
+                            <h3 class="fw-bold text-warning display-5 mb-0 mt-1" id="totalCustomers">0</h3>
+                        </div>
+                        <div class="fs-1 p-3 rounded-3" style="background: rgba(245, 158, 11, 0.1);">👥</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="glass-card p-4 h-100 d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-uppercase text-secondary small fw-bold">Registered E-Bikes</span>
+                            <h3 class="fw-bold text-info display-5 mb-0 mt-1" id="totalBikes">0</h3>
+                        </div>
+                        <div class="fs-1 p-3 rounded-3" style="background: rgba(14, 165, 233, 0.1);">⚡</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form & Table Row -->
+            <div class="row g-4">
+                <div class="col-12 col-lg-4">
+                    <div class="glass-card p-4 h-100">
+                        <h3 class="mb-4 text-warning fs-5 fw-bold" id="formTitle">➕ Add New Customer</h3>
+                        <form id="customerForm" novalidate>
+                            <input type="hidden" id="customerId">
+                            <div class="mb-3">
+                                <label for="customer_name" class="form-label fw-semibold small">Customer Name</label>
+                                <input type="text" class="form-control" id="customer_name" placeholder="e.g. Ali Khan" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label fw-semibold small">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone_number" placeholder="e.g. 03001234567" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="bike_model" class="form-label fw-semibold small">Bike Model</label>
+                                <input type="text" class="form-control" id="bike_model" placeholder="e.g. Super Power E-Bike" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="battery_number" class="form-label fw-semibold small">Battery Number</label>
+                                <input type="text" class="form-control" id="battery_number" placeholder="e.g. BAT-998877" required>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-gold w-100 py-2" id="submitBtn">Save Customer</button>
+                                <button type="button" class="btn btn-outline-custom d-none w-50 py-2" id="cancelBtn" onclick="resetForm()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-8">
+                    <div class="glass-card p-4 h-100 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                            <h3 class="text-warning m-0 fs-5 fw-bold">📋 Customers & Service Logs</h3>
+                            <div style="min-width: 250px;">
+                                <input type="search" class="form-control" id="searchInput" placeholder="🔍 Search name, bike, phone..." onkeyup="filterCustomers()">
+                            </div>
+                        </div>
+                        <div class="table-responsive flex-grow-1">
+                            <table class="table table-custom align-middle mb-0" style="font-size: 0.88rem;">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Bike</th>
+                                        <th>Battery</th>
+                                        <th class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="customerTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" style="border-bottom: none;">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-12 col-lg-6">
+                    <h2 class="text-warning fw-bold mb-4 display-6">Get in Touch With Us</h2>
+                    <p class="text-secondary mb-4">
+                        Have questions about our e-bike inventory or need custom software development for your dealership? Reach out to our team today.
+                    </p>
+                    <div class="d-flex flex-column gap-3 text-secondary">
+                        <div class="d-flex align-items-center gap-3">📍 <span><strong>Location:</strong> Showroom Hub, Main Boulevard, Pakistan</span></div>
+                        <div class="d-flex align-items-center gap-3">📞 <span><strong>Phone:</strong> +92 300 1234567</span></div>
+                        <div class="d-flex align-items-center gap-3">✉️ <span><strong>Email:</strong> support@ebikeshowroom.com</span></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="glass-card p-4 p-lg-5">
+                        <h3 class="h5 text-warning fw-bold mb-4">Send a Message</h3>
+                        <form onsubmit="event.preventDefault(); alert('Message sent successfully! We will get back to you soon.'); this.reset();">
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Your Name</label>
+                                <input type="text" class="form-control" placeholder="e.g. Muhammad Ali" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Your Email</label>
+                                <input type="email" class="form-control" placeholder="e.g. ali@example.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small fw-semibold">Message</label>
+                                <textarea class="form-control" rows="3" placeholder="Write your inquiry here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold w-100 py-2">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background: #030712; border-top: 1px solid var(--border-color);">
+        <div class="container text-center text-secondary small">
+            <p class="mb-1">&copy; 2026 E-Bike Showroom Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let allCustomers = [];
+
+        async function fetchCustomers() {
+            try {
+                const response = await fetch('/customers');
+                const result = await response.json();
+                allCustomers = result.customers;
+                document.getElementById('totalCustomers').innerText = allCustomers.length;
+                document.getElementById('totalBikes').innerText = allCustomers.length;
+                displayCustomers(allCustomers);
+            } catch (error) { console.error("Error:", error); }
+        }
+
+        function displayCustomers(customers) {
+            const tbody = document.getElementById('customerTableBody');
+            tbody.innerHTML = '';
+            if(customers.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="text-center text-muted py-4">No matching records found.</td></tr>`;
+                return;
+            }
+            customers.forEach(c => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td class="fw-semibold">#${c.id}</td>
+                        <td class="fw-semibold text-white">${c.customer_name}</td>
+                        <td>${c.phone_number}</td>
+                        <td>${c.bike_model}</td>
+                        <td><span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1">${c.battery_number}</span></td>
+                        <td class="text-end">
+                            <div class="d-flex justify-content-end gap-1 flex-wrap">
+                                <button class="btn btn-sm btn-success py-1 px-2" style="font-size: 0.75rem;" onclick="generateInvoice(${c.id}, '${c.customer_name}', '${c.bike_model}', '${c.battery_number}')">PDF Bill</button>
+                                <button class="btn btn-sm btn-secondary py-1 px-2" style="font-size: 0.75rem;" onclick="openServiceLog(${c.id}, '${c.customer_name}')">Service</button>
+                                <button class="btn btn-sm btn-primary py-1 px-2" style="font-size: 0.75rem;" onclick="editCustomer(${c.id}, '${c.customer_name}', '${c.phone_number}', '${c.bike_model}', '${c.battery_number}')">Edit</button>
+                                <button class="btn btn-sm btn-danger py-1 px-2" style="font-size: 0.75rem;" onclick="deleteCustomer(${c.id})">Del</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function generateInvoice(id, name, bike, battery) {
+            const invoiceWindow = window.open('', '_blank');
+            invoiceWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head><title>Invoice - ${name}</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+                <body class="p-5 bg-light">
+                    <div class="card p-5 shadow mx-auto rounded-4 border-0" style="max-width: 650px;">
+                        <h2 class="text-warning bg-dark p-3 text-center rounded-3 mb-4">⚡ E-Bike Showroom Invoice</h2>
+                        <hr class="mb-4">
+                        <div class="row g-3 mb-4">
+                            <div class="col-6"><strong>Customer ID:</strong> #${id}</div>
+                            <div class="col-6"><strong>Date:</strong> 2026-10-07</div>
+                            <div class="col-6"><strong>Customer Name:</strong> ${name}</div>
+                            <div class="col-6"><strong>Bike Model:</strong> ${bike}</div>
+                            <div class="col-12"><strong>Battery Serial:</strong> ${battery}</div>
+                            <div class="col-12"><strong>Status:</strong> <span class="badge bg-success">Paid & Verified</span></div>
+                        </div>
+                        <hr class="mb-4">
+                        <button class="btn btn-dark d-print-none w-100 py-2 fw-bold" onclick="window.print()">Print / Save as PDF</button>
+                    </div>
+                </body>
+                </html>
+            `);
+            invoiceWindow.document.close();
+        }
+
+        function openServiceLog(id, name) {
+            const note = prompt(`Enter service note for customer: ${name}`);
+            if(note) alert(`Service log recorded for ID ${id}: "${note}"`);
+        }
+
+        function filterCustomers() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = allCustomers.filter(c => 
+                c.customer_name.toLowerCase().includes(query) || 
+                c.bike_model.toLowerCase().includes(query) ||
+                c.phone_number.includes(query)
+            );
+            displayCustomers(filtered);
+        }
+
+        document.getElementById('customerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('customerId').value;
+            const data = {
+                customer_name: document.getElementById('customer_name').value,
+                phone_number: document.getElementById('phone_number').value,
+                bike_model: document.getElementById('bike_model').value,
+                battery_number: document.getElementById('battery_number').value
+            };
+            let url = id ? `/customers/${id}` : '/add-customer';
+            let method = id ? 'PUT' : 'POST';
+            const response = await fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if(response.ok) {
+                alert(id ? 'Customer updated successfully!' : 'Customer saved successfully!');
+                resetForm();
+                fetchCustomers();
+            } else { alert('Error processing request!'); }
+        });
+
+        function editCustomer(id, name, phone, bike, battery) {
+            document.getElementById('customerId').value = id;
+            document.getElementById('customer_name').value = name;
+            document.getElementById('phone_number').value = phone;
+            document.getElementById('bike_model').value = bike;
+            document.getElementById('battery_number').value = battery;
+            document.getElementById('formTitle').innerText = '✏️ Edit Customer';
+            document.getElementById('submitBtn').innerText = 'Update Customer';
+            document.getElementById('cancelBtn').classList.remove('d-none');
+            window.location.hash = '#dashboard';
+        }
+
+        function resetForm() {
+            document.getElementById('customerForm').reset();
+            document.getElementById('customerId').value = '';
+            document.getElementById('formTitle').innerText = '➕ Add New Customer';
+            document.getElementById('submitBtn').innerText = 'Save Customer';
+            document.getElementById('cancelBtn').classList.add('d-none');
+        }
+
+        async function deleteCustomer(id) {
+            if(confirm(`Are you sure you want to delete customer ID ${id}?`)) {
+                const response = await fetch(`/customers/${id}`, { method: 'DELETE' });
+                if(response.ok) { fetchCustomers(); }
+            }
+        }
+
+        fetchCustomers();
+    </script>
+</body>
+</html>

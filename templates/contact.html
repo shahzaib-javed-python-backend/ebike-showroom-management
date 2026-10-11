@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - E-Bike Showroom Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0b0f19;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-gold: #f59e0b;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-base); color: #f3f4f6; }
+        .navbar { background: rgba(11, 15, 25, 0.85) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
+        .navbar-brand { font-weight: 800; background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link { font-weight: 500; color: #9ca3af !important; }
+        .nav-link:hover, .nav-link.active { color: #f59e0b !important; }
+        .glass-card { background: var(--bg-card); backdrop-filter: blur(16px); border: 1px solid var(--border-color); border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #0b0f19;
+            font-weight: 700;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.75rem;
+        }
+        .btn-gold:hover { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #0b0f19; }
+        .form-control {
+            background: rgba(3, 7, 18, 0.6) !important;
+            border: 1px solid var(--border-color) !important;
+            color: #f3f4f6 !important;
+            border-radius: 0.6rem;
+            padding: 0.65rem 1rem;
+        }
+        section { padding: 8rem 0 6rem 0; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fs-4 d-flex align-items-center gap-2" href="/"><span>⚡</span> E-Bike Showroom</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-lg-4 align-items-center mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-semibold" href="/dashboard">Live Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-12 col-lg-6">
+                    <h2 class="text-warning fw-bold mb-4 display-6">Get in Touch With Us</h2>
+                    <p class="text-secondary mb-4">
+                        Have questions about our e-bike inventory or need custom software development for your dealership? Reach out to our team today.
+                    </p>
+                    <div class="d-flex flex-column gap-3 text-secondary">
+                        <div class="d-flex align-items-center gap-3">📍 <span><strong>Location:</strong> Showroom Hub, Main Boulevard, Pakistan</span></div>
+                        <div class="d-flex align-items-center gap-3">📞 <span><strong>Phone:</strong> +92 300 1234567</span></div>
+                        <div class="d-flex align-items-center gap-3">✉️ <span><strong>Email:</strong> support@ebikeshowroom.com</span></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="glass-card p-4 p-lg-5">
+                        <h3 class="h5 text-warning fw-bold mb-4">Send a Message</h3>
+                        <form onsubmit="event.preventDefault(); alert('Message sent successfully! We will get back to you soon.'); this.reset();">
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Your Name</label>
+                                <input type="text" class="form-control" placeholder="e.g. Muhammad Ali" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Your Email</label>
+                                <input type="email" class="form-control" placeholder="e.g. ali@example.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small fw-semibold">Message</label>
+                                <textarea class="form-control" rows="3" placeholder="Write your inquiry here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold w-100 py-2">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 mt-5" style="background: #030712; border-top: 1px solid var(--border-color);">
+        <div class="container text-center text-secondary small">
+            <p class="mb-1">&copy; 2026 E-Bike Showroom Management System. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - E-Bike Showroom Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0b0f19;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-gold: #f59e0b;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-base); color: #f3f4f6; }
+        .navbar { background: rgba(11, 15, 25, 0.85) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
+        .navbar-brand { font-weight: 800; background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link { font-weight: 500; color: #9ca3af !important; }
+        .nav-link:hover, .nav-link.active { color: #f59e0b !important; }
+        .glass-card { background: var(--bg-card); backdrop-filter: blur(16px); border: 1px solid var(--border-color); border-radius: 1rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+        section { padding: 8rem 0 6rem 0; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fs-4 d-flex align-items-center gap-2" href="/"><span>⚡</span> E-Bike Showroom</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-lg-4 align-items-center mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-semibold" href="/dashboard">Live Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-lg-6">
+                    <h2 class="text-warning fw-bold mb-4 display-6">About Our Showroom Platform</h2>
+                    <p class="text-secondary mb-3">
+                        We specialize in providing cutting-edge digital infrastructure for modern electric bike dealerships. Our system bridges the gap between customer relationship management (CRM) and vehicle fleet diagnostics.
+                    </p>
+                    <p class="text-secondary mb-0">
+                        Designed with speed, reliability, and security at its core, our platform ensures your business operations run smoothly without technical friction.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="glass-card p-4 p-lg-5">
+                        <h3 class="h5 text-warning fw-bold mb-4">Why Choose Our System?</h3>
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-secondary">
+                            <li class="d-flex align-items-center gap-2">✅ Specialized electric bike & battery tracking</li>
+                            <li class="d-flex align-items-center gap-2">✅ Instant customer record & service logging</li>
+                            <li class="d-flex align-items-center gap-2">✅ One-click printable PDF showroom invoices</li>
+                            <li class="d-flex align-items-center gap-2">✅ Fast & lightweight SQLite database integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4" style="background: #030712; border-top: 1px solid var(--border-color);">
+        <div class="container text-center text-secondary small">
+            <p class="mb-1">&copy; 2026 E-Bike Showroom Management System. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
