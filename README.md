@@ -6,12 +6,14 @@ A modern, full-stack web application built using **FastAPI**, **SQLAlchemy**, **
 
 ## 🎥 Project Demo
 
-[![Project Demo](https://img.shields.io/badge/▶_Watch_Project_Demo-Video-red?style=for-the-badge&logo=youtube)](https://github.com/shahzaib-javed-python-backend/ebike-showroom-management/blob/main/demo.mp4.mp4)
+[![Watch Demo on Facebook](https://img.shields.io/badge/▶_Watch_Project_Demo-Facebook-1877F2?style=for-the-badge&logo=facebook)](https://www.facebook.com/61594547758097/videos/pcb.122114287281484925/1631191598793700)
+
+*(Click the badge above to watch the full application walkthrough on Facebook)*
 
 ---
 
 ## 🚀 Features
-* **Full Operations (CRUD):** Seamlessly add, view, update, and delete customer records.
+* **Full CRUD Operations:** Seamlessly add, view, update, and delete customer records.
 * **Live Search Filter:** Instantly filter records by customer name, phone number, or bike model.
 * **FastAPI Backend:** High-performance asynchronous endpoints powered by Pydantic data validation.
 * **SQLAlchemy ORM:** Robust relational database management and clean session handling.
@@ -41,5 +43,4 @@ ebike-manager/
 ├── database.py          # Database Connection & Session Setup
 ├── models.py            # SQLAlchemy Models
 ├── requirements.txt     # Python Dependencies
-├── demo.mp4.mp4         # Project Demo Video
 └── README.md            # Project Documentation
