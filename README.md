@@ -6,7 +6,7 @@ Ek modern, full-stack web application jo **FastAPI**, **SQLAlchemy**, **SQLite/P
 
 ## 🎥 Project Demo
 
-[▶ Watch E-Bike Showroom Demo Video](https://github.com/shahzaib-javed-python-backend/ebike-showroom-management/blob/main/demo.mp4.mp4)
+[▶ Watch / Download Demo Video (MP4)](https://github.com/shahzaib-javed-python-backend/ebike-showroom-management/raw/main/demo.mp4.mp4)
 
 ---
 
