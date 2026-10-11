@@ -1,6 +1,14 @@
 # ⚡ E-Bike Showroom Management System
 
-Ek modern, full-stack web application jo **FastAPI**, **SQLAlchemy**, **SQLite**, aur **Bootstrap 5** ko use karke banayi gayi hai. Is system ka maqsad e-bike showroom ke customers, unke phone numbers, bike models aur battery numbers ko efficiently manage karna hai.
+Ek modern, full-stack web application jo **FastAPI**, **SQLAlchemy**, **SQLite/PostgreSQL**, aur **Bootstrap 5** ko use karke banayi gayi hai. Is system ka maqsad e-bike showroom ke customers, unke phone numbers, bike models aur battery numbers ko efficiently manage karna hai.
+
+---
+
+## 🎥 Project Demo
+
+<video src="demo.mp4.mp4" controls="controls" style="max-width: 100%;">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -14,7 +22,7 @@ Ek modern, full-stack web application jo **FastAPI**, **SQLAlchemy**, **SQLite**
 ---
 
 ## 🛠️ Tech Stack
-* **Backend:** Python, FastAPI, SQLAlchemy, Pydantic, Uvicorn, SQLite
+* **Backend:** Python, FastAPI, SQLAlchemy, Pydantic, Uvicorn, PostgreSQL / SQLite
 * **Frontend:** HTML5, CSS3, JavaScript (Fetch API), Bootstrap 5 (Dark Theme)
 * **Template Engine:** Jinja2
 
@@ -35,20 +43,5 @@ ebike-manager/
 ├── database.py          # Database Connection & Session Setup
 ├── models.py            # SQLAlchemy Models
 ├── requirements.txt     # Python Dependencies
+├── demo.mp4.mp4         # Project Demo Video
 └── README.md            # Project Documentation
-Installation & Running Locally
-Apne local system par project chalane ke liye yeh steps follow karein:
-
-Clone the Repository:
-git clone [https://github.com/shahzaib-javed-python-backend/ebike-showroom-management.git](https://github.com/shahzaib-javed-python-backend/ebike-showroom-management.git)
-cd ebike-manager
-Install Dependencies:
-pip install -r requirements.txt
-Run the FastAPI Server:
-uvicorn main:app --reload
-Open in Browser:
-http://127.0.0.1:8000
-👨‍💻 Developer
-Developed by Shahzaib Javed
-
-Python Backend Engineer & Data Science Student
